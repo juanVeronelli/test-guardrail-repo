@@ -1,0 +1,6 @@
+
+# Kyncode — nunca commitear secretos locales
+.env
+.env.*
+!.env.example
+!.env.template
