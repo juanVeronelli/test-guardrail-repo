@@ -1,0 +1,286 @@
+{
+  "name": "probe-workflow-27",
+  "nodes": [
+    {
+      "id": "node-27-0",
+      "name": "Step 0",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/0",
+        "method": "GET",
+        "json": {
+          "k": 0,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-1",
+      "name": "Step 1",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/1",
+        "method": "GET",
+        "json": {
+          "k": 1,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-2",
+      "name": "Step 2",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/2",
+        "method": "GET",
+        "json": {
+          "k": 2,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-3",
+      "name": "Step 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/3",
+        "method": "GET",
+        "json": {
+          "k": 3,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-4",
+      "name": "Step 4",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/4",
+        "method": "GET",
+        "json": {
+          "k": 4,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-5",
+      "name": "Step 5",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/5",
+        "method": "GET",
+        "json": {
+          "k": 5,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-6",
+      "name": "Step 6",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/6",
+        "method": "GET",
+        "json": {
+          "k": 6,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-7",
+      "name": "Step 7",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/7",
+        "method": "GET",
+        "json": {
+          "k": 7,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-8",
+      "name": "Step 8",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/8",
+        "method": "GET",
+        "json": {
+          "k": 8,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-9",
+      "name": "Step 9",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/9",
+        "method": "GET",
+        "json": {
+          "k": 9,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-10",
+      "name": "Step 10",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/10",
+        "method": "GET",
+        "json": {
+          "k": 10,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-11",
+      "name": "Step 11",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/11",
+        "method": "GET",
+        "json": {
+          "k": 11,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-12",
+      "name": "Step 12",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/12",
+        "method": "GET",
+        "json": {
+          "k": 12,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-13",
+      "name": "Step 13",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/13",
+        "method": "GET",
+        "json": {
+          "k": 13,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-14",
+      "name": "Step 14",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/14",
+        "method": "GET",
+        "json": {
+          "k": 14,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-15",
+      "name": "Step 15",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/15",
+        "method": "GET",
+        "json": {
+          "k": 15,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-16",
+      "name": "Step 16",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/16",
+        "method": "GET",
+        "json": {
+          "k": 16,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-17",
+      "name": "Step 17",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/17",
+        "method": "GET",
+        "json": {
+          "k": 17,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-18",
+      "name": "Step 18",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/18",
+        "method": "GET",
+        "json": {
+          "k": 18,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    },
+    {
+      "id": "node-27-19",
+      "name": "Step 19",
+      "type": "n8n-nodes-base.set",
+      "parameters": {
+        "url": "https://example.invalid/probe/27/19",
+        "method": "GET",
+        "json": {
+          "k": 19,
+          "batch": 27,
+          "note": "synthetic cost-probe node"
+        }
+      }
+    }
+  ],
+  "connections": {}
+}
