@@ -13,10 +13,7 @@ function billingClient() {
   return {
     openai: OPENAI_KEY,
     aws: AWS_ACCESS_KEY_ID,
-    stripe: STRIPE_SECRET,
     github: GITHUB_PAT,
-    slack: SLACK_BOT,
-    twilio: TWILIO_SID,
     npm: NPM_TOKEN,
     maps: GOOGLE_MAPS,
     session: SESSION_JWT,
