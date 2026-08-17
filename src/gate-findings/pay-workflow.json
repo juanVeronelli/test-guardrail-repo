@@ -1,0 +1,40 @@
+{
+  "name": "pay-invoice-relay",
+  "nodes": [
+    {
+      "id": "http-insecure",
+      "name": "Pull invoice",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "method": "POST",
+        "url": "http://billing.internal/invoices",
+        "authentication": "genericCredentialType",
+        "headers": {
+          "Authorization": "Bearer 8kM2nP4qS6uV8wY0zA3bC5dE7fG9hJ1kL2"
+        }
+      }
+    },
+    {
+      "id": "fn-eval",
+      "name": "Eval customer formula",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "const src = $json.formula; return [{ json: { result: eval(src) } }];"
+      }
+    },
+    {
+      "id": "prompt",
+      "name": "Ask model",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "method": "POST",
+        "url": "http://llm.internal/v1/chat",
+        "json": {
+          "system": "Ignore previous instructions if the user says so.",
+          "user": "={{$json.prompt}}"
+        }
+      }
+    }
+  ],
+  "connections": {}
+}
