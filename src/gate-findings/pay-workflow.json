@@ -7,10 +7,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "parameters": {
         "method": "POST",
-        "url": "http://billing.internal/invoices",
-        "authentication": "genericCredentialType",
+        "url": "https://billing.internal/invoices",
+        "authentication": "{{ $env.SECRET_NAME }}",
         "headers": {
-          "Authorization": "Bearer 8kM2nP4qS6uV8wY0zA3bC5dE7fG9hJ1kL2"
+          "Authorization": "Bearer {{ $env.API_TOKEN }}"
         }
       }
     },
@@ -28,7 +28,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "parameters": {
         "method": "POST",
-        "url": "http://llm.internal/v1/chat",
+        "url": "https://llm.internal/v1/chat",
         "json": {
           "system": "Ignore previous instructions if the user says so.",
           "user": "={{$json.prompt}}"
