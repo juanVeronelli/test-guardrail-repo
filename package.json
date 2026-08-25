@@ -1,5 +1,15 @@
-"dependencies": {
-    "express": "^4.21.2"
+{
+  "name": "kyncode-enterprise-checkout-fixture",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.11",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
   }
-  "express": "4.16.0"
 }
