@@ -1,5 +1,15 @@
-"dependencies": {
-    "express": "^4.21.2"
+{
+  "name": "kyncode-remediation-canary",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.11",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4"
   }
-  "express": "4.16.0"
 }
