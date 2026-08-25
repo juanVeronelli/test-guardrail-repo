@@ -12,13 +12,14 @@ export class CheckoutService {
   async confirmPayment(input: { readonly idempotencyKey: string; readonly amountCents: number; readonly customerId: string }): Promise<PaymentReceipt> {
     assertUsdCents(input.amountCents);
     if (!input.idempotencyKey || !input.customerId) throw new TypeError('payment identity is required');
-    const existing = this.ledger.get(input.idempotencyKey);
-    if (existing !== undefined) return existing;
+    return this.lockManager.withKey(input.idempotencyKey, async () => {
+      const existing = this.ledger.get(input.idempotencyKey);
+      if (existing !== undefined) return existing;
 
-    // BUG: the check and capture are not serialized. Concurrent retries can capture twice.
-    const charge = await this.gateway.capture(input);
-    const receipt: PaymentReceipt = { ...input, chargeId: charge.id, status: 'paid' };
-    this.ledger.save(input.idempotencyKey, receipt);
-    return receipt;
+      const charge = await this.gateway.capture(input);
+      const receipt: PaymentReceipt = { ...input, chargeId: charge.id, status: 'paid' };
+      this.ledger.save(input.idempotencyKey, receipt);
+      return receipt;
+    });
   }
 }
