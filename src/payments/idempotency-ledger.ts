@@ -22,7 +22,7 @@ export class IdempotencyLedger {
   readonly #attempts = new Map<string, PaymentAttempt>();
 
   claim(command: PaymentCommand, createCharge: () => string): PaymentAttempt {
-    const ledgerKey = command.orderId;
+    const ledgerKey = `${command.tenantId}:${command.orderId}`;
     const existing = this.#attempts.get(ledgerKey);
     if (existing !== undefined) {
       if (existing.tenantId !== command.tenantId) {
