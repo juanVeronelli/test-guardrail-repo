@@ -1,16 +1,16 @@
 export class LockManager {
-  #tails = new Map();
+  readonly #tails = new Map<string, Promise<void>>();
 
-  async withKey(key, operation) {
+  async withKey<T>(key: string, operation: () => Promise<T>): Promise<T> {
     const previous = this.#tails.get(key) ?? Promise.resolve();
-    let release;
-    const current = new Promise((resolve) => { release = resolve; });
+    let release: (() => void) | undefined;
+    const current = new Promise<void>((resolve) => { release = resolve; });
     this.#tails.set(key, current);
     await previous;
     try {
       return await operation();
     } finally {
-      release();
+      release?.();
       if (this.#tails.get(key) === current) this.#tails.delete(key);
     }
   }
