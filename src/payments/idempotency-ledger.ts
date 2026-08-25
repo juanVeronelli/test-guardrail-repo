@@ -6,7 +6,8 @@ export interface PaymentAttempt {
 }
 
 export interface PaymentCommand {
-  readonly amountCents: number;
+  readonly amountCents?: number;
+  readonly amount?: number;
   readonly orderId: string;
   readonly tenantId: string;
 }
@@ -18,10 +19,15 @@ export class CrossTenantPaymentLeakError extends Error {
   }
 }
 
+let _chargeSeq = 0;
+function _defaultCreateCharge(): string {
+  return `charge-${++_chargeSeq}-${Date.now()}`;
+}
+
 export class IdempotencyLedger {
   readonly #attempts = new Map<string, PaymentAttempt>();
 
-  claim(command: PaymentCommand, createCharge: () => string): PaymentAttempt {
+  claim(command: PaymentCommand, createCharge: () => string = _defaultCreateCharge): PaymentAttempt {
     const ledgerKey = `${command.tenantId}:${command.orderId}`;
     const existing = this.#attempts.get(ledgerKey);
     if (existing !== undefined) {
@@ -32,7 +38,7 @@ export class IdempotencyLedger {
     }
 
     const attempt: PaymentAttempt = {
-      amountCents: command.amountCents,
+      amountCents: command.amountCents ?? command.amount ?? 0,
       chargeId: createCharge(),
       orderId: command.orderId,
       tenantId: command.tenantId,
