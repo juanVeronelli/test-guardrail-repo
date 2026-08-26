@@ -1,5 +1,12 @@
-"dependencies": {
-    "express": "^4.21.2"
+{
+  "name": "northstar-checkout-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
-  "express": "4.16.0"
 }
